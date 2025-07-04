@@ -1,4 +1,4 @@
-from calculator_core import calculate, get_number, get_operator, log_operation, view_history
+from calculator.calculator_core import calculate, get_number, get_operator, log_operation, view_history
 
 def main():
     print("Welcome to the Basic Calculator!")

@@ -6,7 +6,7 @@ def main():
 
     while True:
         a = get_number("Enter 1st number: ")
-        op = get_operator("Enter operator (+ - * /): ")
+        op = get_operator("Enter operator (+ - * /): ").strip()
         b = get_number("Enter 2nd number: ")
 
         while op == "/" and b == 0:
@@ -15,14 +15,17 @@ def main():
 
         try:
             result = calculate(a, b, op)
-            print(f"The result is {result}")
+            print(f" {a}{op}{b} = {int(result) if result.is_integer() else result}")
             log_operation(a, b, op, result)
         except ValueError as e:
             print(f"Error: {e} \nLet's try that again")
             continue
 
-        next_action = input("Do you want to (c)alculate again, (h)istory, or (q)uit? ").strip().lower()
+        next_action = input("Do you want to\n (c) Calculate again\n (h) History\n (q) Quit ").strip().lower()
+        
+        
         if next_action == "h":
+            print("\n📜 Calculation History")
             view_history()
         elif next_action == "q":
             print("Goodbye! 👋")

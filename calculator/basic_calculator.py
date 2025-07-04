@@ -18,7 +18,8 @@ def main():
             print(f" {a}{op}{b} = {int(result) if result.is_integer() else result}")
             log_operation(a, b, op, result)
         except ValueError as e:
-            print(f"Error: {e} \nLet's try that again")
+            print(f"❌ Error: {e}")
+            print("🔁 Let’s try that again...\n")
             continue
 
         next_action = input("Do you want to\n (c) Calculate again\n (h) History\n (q) Quit ").strip().lower()

@@ -4,7 +4,7 @@
 def calculate(a, b, op):
     """Perform arithmetic operation on two operands based on the given operator."""
     if op == "+":
-        return a - b  # ❌ Deliberate bug: wrong operation
+        return a + b
     elif op == "-":
         return a - b
     elif op == "*":
